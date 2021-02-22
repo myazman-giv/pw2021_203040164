@@ -1,4 +1,4 @@
-</php 
+<?php 
 /*
 Mochamad Yazman Yazid
 203040164
