@@ -4,7 +4,7 @@ Mochamad Yazman Yazid
 203040164
 https://github.com/myazman-giv/pw2021_203040164
 pertemuan 3 - 23 Februari 2021
-Mempelajari mengenai pengulangan dan pengkondisian 
+php
 */ 
 ?> 
 
