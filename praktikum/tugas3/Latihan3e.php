@@ -29,7 +29,7 @@ $sapi = [
     "deskripsi" => "Keunggulan sapi bali dari sapi pedaging lain adalah terletak pada tulang sapi bali relatif lebih kecil dari sapi jenis lain, sehingga jumlah daging lebih tebal",
     "umur" => "2 tahun",
     "bobot" => "500 kg",
-    "harga" => "19.000.000",
+    "harga" => "Rp 19.000.000",
     "no" => "3",
     "gambar" => "bali.jpg"
     ],
