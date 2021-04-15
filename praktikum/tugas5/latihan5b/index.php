@@ -1,13 +1,4 @@
 <?php 
-/*
-Mochamad Yazman Yazid
-203040164
-https://github.com/myazman-giv/pw2021_203040164
-pertemuan 4
-*/ 
-?>
-
-<?php 
 // menghubungkan dengan file php lainya
 require 'php/functions.php';
 // melakukan query
@@ -24,11 +15,15 @@ $sapi = query("SELECT * FROM sapi");
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+    <div class="add">
+        <a href="php/tambah.php"><button style="background-color:#008B8B; border-color:Azure; color:white">Tambah Data</button></a>
+    </div>
 
 <h1 class ="judul" align="center">JUAL BELI SAPI KURBAN TAHUN 1442 HIJRIAH</h1>
 <table class="table" border="2" cellpadding="10" cellspacing="0" align="center">
     <tr>
       <th>NO</th>
+      <th>OPSI</th>
       <th>GAMBAR</th>
       <th>JENIS</th>
       <th>KEUNGGULAN</th>
@@ -36,16 +31,22 @@ $sapi = query("SELECT * FROM sapi");
       <th>BOBOT</th>
       <th>HARGA</th>
     </tr>
+    <?php $i = 1; ?>
     <?php foreach ($sapi as $cow) : ?>
         <tr>
-        <td><?php echo $cow["id"]; ?></td>  
+        <td><?= $i; ?></td>
+        <td>
+            <a href=""><button style="background-color:green; border-color:Azure; color:white">UBAH</button></a>
+            <a href=""><button style="background-color:Crimson; border-color:Azure; color:white">HAPUS</button></a>
+        </td>  
         <td><img src="img/<?= $cow ["gambar"];?>"></td>
         <td><?php echo $cow["jenis"]; ?></td>    
         <td><?php echo $cow["deskripsi"]; ?></td>  
         <td><?php echo $cow["umur"]; ?></td>  
         <td><?php echo $cow["bobot"]; ?></td>      
-        <td><?php echo $cow["harga"]; ?></td>    
+        <td><?php echo $cow["harga"]; ?></td>  
         </tr>
+        <?php $i++; ?>
     <?php endforeach; ?>
 </table>
 </body>

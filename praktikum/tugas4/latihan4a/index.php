@@ -45,7 +45,7 @@ $result = mysqli_query($conn, "SELECT * FROM sapi");
         <tr>
         <td><?php echo $cow["id"]; ?></td>  
         <td><img src="img/<?= $cow ["gambar"];?>"></td>
-        <td><?php echo $cow["jenis"]; ?></td>    
+        <td><?php echo $cow["jenis"]; ?></td>
         <td><?php echo $cow["deskripsi"]; ?></td>  
         <td><?php echo $cow["umur"]; ?></td>  
         <td><?php echo $cow["bobot"]; ?></td>      
