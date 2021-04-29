@@ -1,4 +1,4 @@
-<?php 
+<?php
 // melakukan koneksi ke database
 function koneksi()
 {
@@ -14,8 +14,8 @@ function query($sql)
     $conn = koneksi();
     $result = mysqli_query($conn, "$sql");
     $rows = [];
-while ($cow = mysqli_fetch_assoc($result)) {
-    $rows [] = $cow;
+    while ($cow = mysqli_fetch_assoc($result)) {
+        $rows[] = $cow;
     }
     return $rows;
 }
@@ -26,10 +26,10 @@ function tambah($data)
 
     $gambar = htmlspecialchars($data['gambar']);
     $jenis = htmlspecialchars($data['jenis']);
-    $deskripsi= htmlspecialchars($data['deskripsi']);
-    $umur= htmlspecialchars($data['umur']);
-    $bobot= htmlspecialchars($data['bobot']);
-    $harga= htmlspecialchars($data['harga']);
+    $deskripsi = htmlspecialchars($data['deskripsi']);
+    $umur = htmlspecialchars($data['umur']);
+    $bobot = htmlspecialchars($data['bobot']);
+    $harga = htmlspecialchars($data['harga']);
 
     $query = "INSERT INTO sapi
                 VALUES
@@ -38,7 +38,6 @@ function tambah($data)
     mysqli_query($conn, $query);
 
     return mysqli_affected_rows($conn);
-
 }
 // fungsi untuk menghapus data
 function hapus($id)
@@ -56,10 +55,10 @@ function ubah($data)
     $id = htmlspecialchars($data['id']);
     $gambar = htmlspecialchars($data['gambar']);
     $jenis = htmlspecialchars($data['jenis']);
-    $deskripsi= htmlspecialchars($data['deskripsi']);
-    $umur= htmlspecialchars($data['umur']);
-    $bobot= htmlspecialchars($data['bobot']);
-    $harga= htmlspecialchars($data['harga']);
+    $deskripsi = htmlspecialchars($data['deskripsi']);
+    $umur = htmlspecialchars($data['umur']);
+    $bobot = htmlspecialchars($data['bobot']);
+    $harga = htmlspecialchars($data['harga']);
 
     $query = "UPDATE sapi2
             SET
@@ -85,7 +84,7 @@ function registrasi($data)
     $password = mysqli_real_escape_string($conn, $data['password']);
 
     // cek username sudah ada/ belom
-    $result  = mysqli_query($conn,"SELECT username FROM user WHERE username = '$username'");
+    $result  = mysqli_query($conn, "SELECT username FROM user WHERE username = '$username'");
     if (mysqli_fetch_assoc($result)) {
         echo "<script>
                 alert('username sudah digunakan');
@@ -101,4 +100,3 @@ function registrasi($data)
 
     return mysqli_affected_rows($conn);
 }
-?>
