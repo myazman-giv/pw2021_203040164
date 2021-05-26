@@ -1,0 +1,23 @@
+.judul {
+    color :rgb(59, 48, 16)
+}
+.table {
+    font-family: sans-serif;
+    color:rgba(59, 23, 1, 0.699);
+    border: 1px solid rgb(252, 134, 0);
+}
+.table tr th {
+    background: rgb(255, 166, 0);
+    color: rgb(53, 39, 0);
+    font-weight: bold;
+}
+.table, th, td {
+    padding :8px 20px;
+    text-align: center;
+}
+.table tr:hover {
+    background-color: rgb(236, 238, 148);
+}
+.table td:hover {
+    background-color: rgb(219, 193, 45);
+}
