@@ -6,21 +6,20 @@ https://github.com/myazman-giv/pw2021_203040164
 pertemuan 12 - 7 Mei 2021
 php
 */
-?>
-<?php
-session_start();
+?><?php
+  session_start();
 
-if (isset($_SESSION['login'])) {
-  header("Location: index.php");
-  exit;
-}
-require 'functions.php';
+  if (isset($_SESSION['login'])) {
+    header("Location: index.php");
+    exit;
+  }
+  require 'functions.php';
 
-// ketika login ditekan
-if (isset($_POST['login'])) {
-  $login = login($_POST);
-}
-?>
+  // ketika login ditekan
+  if (isset($_POST['login'])) {
+    $login = login($_POST);
+  }
+  ?>
 <!DOCTYPE html>
 <html lang="en">
 

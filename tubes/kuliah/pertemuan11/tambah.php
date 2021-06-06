@@ -6,27 +6,26 @@ https://github.com/myazman-giv/pw2021_203040164
 pertemuan 11 - 30 April 2021
 php
 */
-?>
-<?php
-require 'functions.php';
+?><?php
+  require 'functions.php';
 
-// cek apakah tombol tambah sudah ditekan
+  // cek apakah tombol tambah sudah ditekan
 
-if (isset($_POST['tambah'])) {
-  if (tambah($_POST) > 0) {
-    echo "<script>
+  if (isset($_POST['tambah'])) {
+    if (tambah($_POST) > 0) {
+      echo "<script>
         alert('data berhasil ditambahkan');
         document.location.href ='index.php';
       </script>";
-  } else {
-    echo "<script>
+    } else {
+      echo "<script>
     alert('data gagal ditambahkan');
     document.location.href ='index.php';
   </script>";
+    }
   }
-}
 
-?>
+  ?>
 
 <!DOCTYPE html>
 <html lang="en">

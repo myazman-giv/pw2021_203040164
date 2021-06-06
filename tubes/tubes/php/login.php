@@ -1,17 +1,25 @@
 <?php
-session_start();
+/*
+Mochamad Yazman Yazid
+203040164
+https://github.com/myazman-giv/pw2021_203040164
+tugas Besar
+php
+*/
+?><?php
+  session_start();
 
-if (isset($_SESSION['login'])) {
-  header("Location: index.php");
-  exit;
-}
-require 'functions.php';
+  if (isset($_SESSION['login'])) {
+    header("Location: index.php");
+    exit;
+  }
+  require 'functions.php';
 
-// ketika login ditekan
-if (isset($_POST['login'])) {
-  $login = login($_POST);
-}
-?>
+  // ketika login ditekan
+  if (isset($_POST['login'])) {
+    $login = login($_POST);
+  }
+  ?>
 <!DOCTYPE html>
 <html lang="en">
 

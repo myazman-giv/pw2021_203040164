@@ -6,42 +6,40 @@ https://github.com/myazman-giv/pw2021_203040164
 pertemuan 13 - 8 Mei 2021
 php
 */
-?>
+?><?php
+  session_start();
 
-<?php
-session_start();
+  if (!isset($_SESSION['login'])) {
+    header("Location: login.php");
+    exit;
+  }
+  require 'functions.php';
 
-if (!isset($_SESSION['login'])) {
-  header("Location: login.php");
-  exit;
-}
-require 'functions.php';
-
-// jika tidak ada id di url
-if (!isset($_GET['id'])) {
-  header("Location:index.php");
-  exit;
-}
+  // jika tidak ada id di url
+  if (!isset($_GET['id'])) {
+    header("Location:index.php");
+    exit;
+  }
 
 
-// amnbil id dari url
-$id =  $_GET['id'];
+  // amnbil id dari url
+  $id =  $_GET['id'];
 
-$jrs = query("SELECT * FROM jersey WHERE id = $id");
-// cek apakah tombol ubah sudah ditekan
+  $jrs = query("SELECT * FROM jersey WHERE id = $id");
+  // cek apakah tombol ubah sudah ditekan
 
-if (isset($_POST['ubah'])) {
-  if (ubah($_POST) > 0) {
-    echo "<script>
+  if (isset($_POST['ubah'])) {
+    if (ubah($_POST) > 0) {
+      echo "<script>
         alert('data berhasil diubah');
         document.location.href ='index.php';
       </script>";
-  } else {
-    echo "data gagal diubah";
+    } else {
+      echo "data gagal diubah";
+    }
   }
-}
 
-?>
+  ?>
 
 <!DOCTYPE html>
 <html lang="en">

@@ -1,13 +1,21 @@
 <?php
-require 'functions.php';
+/*
+Mochamad Yazman Yazid
+203040164
+https://github.com/myazman-giv/pw2021_203040164
+tugas Besar
+php
+*/
+?><?php
+  require 'functions.php';
 
-// ambil id dari url
-$id = $_GET['id'];
+  // ambil id dari url
+  $id = $_GET['id'];
 
-// query jersey berdasarkan id
-$jrs = query("SELECT * FROM jersey WHERE id = $id");
+  // query jersey berdasarkan id
+  $jrs = query("SELECT * FROM jersey WHERE id = $id");
 
-?>
+  ?>
 
 <!DOCTYPE html>
 <html lang="en">

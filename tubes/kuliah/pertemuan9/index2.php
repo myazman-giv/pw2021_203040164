@@ -6,25 +6,23 @@ https://github.com/myazman-giv/pw2021_203040164
 pertemuan 9 - 16 April 2021
 php
 */
-?>
+?><?php
+  // koneksi ke databse
+  $conn = mysqli_connect("localhost", "root", "", "phpdasar");
 
-<?php
-// koneksi ke databse
-$conn = mysqli_connect("localhost", "root", "", "phpdasar");
+  // ambil data dari table jersey / querey
+  $result = mysqli_query($conn, "SELECT * FROM jersey");
 
-// ambil data dari table jersey / querey
-$result = mysqli_query($conn, "SELECT * FROM jersey");
+  // ambil data (fetch) jersey dari object result
+  // mysqli_fetch_row() // mengemalikan array numerik
+  // mysqli_fetch_array() // mangemblikan array numerik dan array qssosiatif
+  // mysqli_fetch_assoc() // mengembalikan array asosiatif
+  // mysqli_fetch_object() // mengembalikan object
 
-// ambil data (fetch) jersey dari object result
-// mysqli_fetch_row() // mengemalikan array numerik
-// mysqli_fetch_array() // mangemblikan array numerik dan array qssosiatif
-// mysqli_fetch_assoc() // mengembalikan array asosiatif
-// mysqli_fetch_object() // mengembalikan object
-
-// while ($jrs = mysqli_fetch_assoc($result)) {
-//   var_dump($jrs);
-// }
-?>
+  // while ($jrs = mysqli_fetch_assoc($result)) {
+  //   var_dump($jrs);
+  // }
+  ?>
 
 <!DOCTYPE html>
 <html lang="en">

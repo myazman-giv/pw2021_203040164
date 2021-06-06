@@ -6,18 +6,16 @@ https://github.com/myazman-giv/pw2021_203040164
 pertemuan 10 - 23 April 2021
 php
 */
-?>
+?><?php
+  require 'functions.php';
 
-<?php
-require 'functions.php';
+  // ambil id dari url
+  $id = $_GET['id'];
 
-// ambil id dari url
-$id = $_GET['id'];
+  // query jersey berdasarkan id
+  $jrs = query("SELECT * FROM jersey WHERE id = $id");
 
-// query jersey berdasarkan id
-$jrs = query("SELECT * FROM jersey WHERE id = $id");
-
-?>
+  ?>
 
 <!DOCTYPE html>
 <html lang="en">

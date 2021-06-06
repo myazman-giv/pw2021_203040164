@@ -1,20 +1,28 @@
 <?php
-session_start();
+/*
+Mochamad Yazman Yazid
+203040164
+https://github.com/myazman-giv/pw2021_203040164
+tugas Besar
+php
+*/
+?><?php
+  session_start();
 
-if (!isset($_SESSION['login'])) {
-  header("Location: login.php");
-  exit;
-}
+  if (!isset($_SESSION['login'])) {
+    header("Location: login.php");
+    exit;
+  }
 
-require 'functions.php';
-$jersey = query("SELECT * FROM jersey");
+  require 'functions.php';
+  $jersey = query("SELECT * FROM jersey");
 
-// ketika cari di klik
-if (isset($_POST['cari'])) {
-  $jersey = cari($_POST['keyword']);
-}
+  // ketika cari di klik
+  if (isset($_POST['cari'])) {
+    $jersey = cari($_POST['keyword']);
+  }
 
-?>
+  ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,7 +55,7 @@ if (isset($_POST['cari'])) {
           <ul class="right hide-on-med-and-down">
             <li><a href="tambah.php" style="text-decoration:none;">Tambah Data</a></li>
             <li><a href="#jersey" style="text-decoration:none;">Jersey</a></li>
-            <li><a href="logout.php" class="btn btn-outline-info" style="color: whitesmoke;">logout</a></li>
+            <li><a href="logout.php" class="btn btn-outline-warning" style="color: whitesmoke;">logout</a></li>
           </ul>
         </div>
       </div>
@@ -58,7 +66,7 @@ if (isset($_POST['cari'])) {
   <ul class="sidenav" id="mobile-nav">
     <li><a href="tambah.php" style="text-decoration:none;">Tambah Data</a></li>
     <li><a href="#jersey" style="text-decoration:none;">Jersey</a></li>
-    <li><a href="logout.php" class="btn btn-outline-info" style="color: whitesmoke;">logout</a></li>
+    <li><a href="logout.php" class="btn btn-outline-warning" style="color:aqua; background-color:teal">logout</a></li>
   </ul>
 
 
@@ -94,7 +102,7 @@ if (isset($_POST['cari'])) {
               <div class="col-md-7">
                 <div class="card-body"><br><br><br>
                   <h1 class="card-title"><?= $jrs['jersey']; ?></h1>
-                  <a href="detail.php?id=<?= $jrs['id']; ?>" class="btn btn-outline-info">Lihat Detail</a>
+                  <a href="detail.php?id=<?= $jrs['id']; ?>" class="btn btn-info">Lihat Detail</a>
                 </div>
               </div>
             </div>
@@ -114,8 +122,27 @@ if (isset($_POST['cari'])) {
     <a href="https://youtube.com/channel/UCZhKBOMBPmZe8AQlwdk7C-g"><i class="bi bi-youtube" style="font-size: 2rem; color :yellow"></i></a>
   </footer>
 
-
+  <!--JavaScript at end of body for optimized loading-->
   <script src="../js/script.js"></script>
+  <script type="text/javascript" src="../js/materialize.min.js"></script>
+  <script>
+    const sideNav = document.querySelectorAll('.sidenav');
+    M.Sidenav.init(sideNav);
+
+    const slider = document.querySelectorAll('.slider');
+    M.Slider.init(slider, {
+      indicators: false,
+      height: 750,
+      transition: 800,
+      interval: 6000
+    });
+
+    const parallax = document.querySelectorAll('.parallax');
+    M.Parallax.init(parallax);
+
+    const scroll = document.querySelectorAll('.scrollspy');
+    M.ScrollSpy.init(scroll);
+  </script>
 </body>
 
 </html>

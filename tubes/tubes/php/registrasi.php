@@ -1,17 +1,25 @@
 <?php
-require 'functions.php';
+/*
+Mochamad Yazman Yazid
+203040164
+https://github.com/myazman-giv/pw2021_203040164
+tugas Besar
+php
+*/
+?><?php
+  require 'functions.php';
 
-if (isset($_POST['registrasi'])) {
-  if (registrasi($_POST) > 0) {
-    echo "<script>
+  if (isset($_POST['registrasi'])) {
+    if (registrasi($_POST) > 0) {
+      echo "<script>
               alert('user telah berhasil ditambahkan, silahkan login');
               document,location.href='login.php';
             </script>";
-  } else {
-    echo 'user gagal ditambahkan!';
+    } else {
+      echo 'user gagal ditambahkan!';
+    }
   }
-}
-?>
+  ?>
 <!DOCTYPE html>
 <html lang="en">
 

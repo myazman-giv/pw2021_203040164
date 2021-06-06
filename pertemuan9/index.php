@@ -6,12 +6,10 @@ https://github.com/myazman-giv/pw2021_203040164
 pertemuan 9 - 16 April 2021
 php
 */
-?>
-
-<?php
-require 'functions.php';
-$jersey = query("SELECT * FROM jersey");
-?>
+?><?php
+  require 'functions.php';
+  $jersey = query("SELECT * FROM jersey");
+  ?>
 
 <!DOCTYPE html>
 <html lang="en">

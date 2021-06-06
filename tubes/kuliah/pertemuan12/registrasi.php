@@ -6,22 +6,20 @@ https://github.com/myazman-giv/pw2021_203040164
 pertemuan 12 - 7 Mei 2021
 php
 */
-?>
+?><?php
+  require 'functions.php';
 
-<?php
-require 'functions.php';
-
-if (isset($_POST['registrasi'])) {
-  if (registrasi($_POST) > 0) {
-    echo "<script>
+  if (isset($_POST['registrasi'])) {
+    if (registrasi($_POST) > 0) {
+      echo "<script>
               alert('user telah berhasil ditambahkan, silahkan login');
               document,location.href='login.php';
             </script>";
-  } else {
-    echo 'user gagal ditambahkan!';
+    } else {
+      echo 'user gagal ditambahkan!';
+    }
   }
-}
-?>
+  ?>
 <!DOCTYPE html>
 <html lang="en">
 

@@ -6,30 +6,29 @@ https://github.com/myazman-giv/pw2021_203040164
 pertemuan 13 - 8 Mei 2021
 php
 */
-?>
-<?php
-session_start();
+?><?php
+  session_start();
 
-if (!isset($_SESSION['login'])) {
-  header("Location: login.php");
-  exit;
-}
-require 'functions.php';
+  if (!isset($_SESSION['login'])) {
+    header("Location: login.php");
+    exit;
+  }
+  require 'functions.php';
 
-// cek apakah tombol tambah sudah ditekan
+  // cek apakah tombol tambah sudah ditekan
 
-if (isset($_POST['tambah'])) {
-  if (tambah($_POST) > 0) {
-    echo "<script>
+  if (isset($_POST['tambah'])) {
+    if (tambah($_POST) > 0) {
+      echo "<script>
         alert('data berhasil ditambahkan');
         document.location.href ='index.php';
       </script>";
-  } else {
-    echo 'data gagal ditambahkan';
+    } else {
+      echo 'data gagal ditambahkan';
+    }
   }
-}
 
-?>
+  ?>
 
 <!DOCTYPE html>
 <html lang="en">

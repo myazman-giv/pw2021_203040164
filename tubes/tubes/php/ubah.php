@@ -1,38 +1,44 @@
 <?php
-session_start();
+/*
+Mochamad Yazman Yazid
+203040164
+https://github.com/myazman-giv/pw2021_203040164
+tugas Besar
+php
+*/
+?><?php
+  session_start();
 
-if (!isset($_SESSION['login'])) {
-  header("Location: login.php");
-  exit;
-}
-require 'functions.php';
+  if (!isset($_SESSION['login'])) {
+    header("Location: login.php");
+    exit;
+  }
+  require 'functions.php';
 
-// jika tidak ada id di url
-if (!isset($_GET['id'])) {
-  header("Location:index.php");
-  exit;
-}
+  // jika tidak ada id di url
+  if (!isset($_GET['id'])) {
+    header("Location:index.php");
+    exit;
+  }
 
+  // amnbil id dari url
+  $id =  $_GET['id'];
 
-// amnbil id dari url
-$id =  $_GET['id'];
+  $jrs = query("SELECT * FROM jersey WHERE id = $id");
+  // cek apakah tombol ubah sudah ditekan
 
-$jrs = query("SELECT * FROM jersey WHERE id = $id");
-// cek apakah tombol ubah sudah ditekan
-
-if (isset($_POST['ubah'])) {
-  if (ubah($_POST) > 0) {
-    echo "<script>
+  if (isset($_POST['ubah'])) {
+    if (ubah($_POST) > 0) {
+      echo "<script>
         alert('data berhasil diubah');
         document.location.href ='index.php';
       </script>";
-  } else {
-    echo "data gagal diubah";
+    } else {
+      echo "data gagal diubah";
+    }
   }
-}
 
-?>
-
+  ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,52 +63,52 @@ if (isset($_POST['ubah'])) {
     <div class="row">
       <div class="col text-center">
         <h1 style="text-align: center; color: aqua;">Form Ubah Data</h1>
+        <hr style="color: aqua;">
+        < </div>
       </div>
-    </div>
 
 
-    <div class="row">
-      <div class="col text-center">
-        <div class="card" style=" background-image:url(../img/5.png);">
-          <form action="" method="POST" enctype="multipart/form-data">
-            <input type="hidden" name="id" value="<?= $jrs['id']; ?>">
-            <li>
-              <input type="hidden" name="gambar_lama" value="<?= $jrs['gambar']; ?>">
-              <label>
-                Gambar :
-                <input type="file" name="gambar" class="gambar" onchange="previewImage()">
-                <img src="../img/<?= $jrs['gambar']; ?>" width="150" style="display: block;" class="img-preview">
-              </label>
-            </li>
-            <div class="card-body card text-dark bg-light mb-3">
-              <h5 class="card-title"><label>
-                  Jersey :
-                  <input type="text" name="jersey" autofocus required value="<?= $jrs['jersey']; ?>" style="text-align: center;">
-                </label></h5>
-              <h5 class="card-title"><label>
-                  Ukuran :
-                  <input type="text" name="ukuran" required value="<?= $jrs['ukuran']; ?>" style="text-align: center;">
-                </label></h5>
-              <h5 class="card-title"><label>
-                  Asal Pengiriman :
-                  <input type="text" name="asal" required value="<?= $jrs['asal']; ?>" style="text-align: center;">
-                </label></h5>
-              <h5 class="card-title"><label>
-                  Harga :
-                  <input type="text" name="harga" required value="<?= $jrs['harga']; ?>" style="text-align: center;">
-                </label></h5>
-              <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                <a href="index.php" class="btn btn-warning">Kembali</a>
-                <button type="submit" name="ubah" class="btn btn-success">Ubah Data</button>
+      <div class="row">
+        <div class="col text-center">
+          <div class="card" style=" background-image:url(../img/5.png);">
+            <form action="" method="POST" enctype="multipart/form-data">
+              <input type="hidden" name="id" value="<?= $jrs['id']; ?>">
+              <li>
+                <input type="hidden" name="gambar_lama" value="<?= $jrs['gambar']; ?>">
+                <label>
+                  <img src="../img/<?= $jrs['gambar']; ?>" width="150" style="display: block;" class="img-preview"><br><br>
+                  <input type="file" name="gambar" class="gambar" onchange="previewImage()">
+                </label>
+              </li>
+              <div class="card-body card text-dark bg-light mb-3">
+                <h5 class="card-title"><label>
+                    Jersey :
+                    <input type="text" name="jersey" autofocus required value="<?= $jrs['jersey']; ?>" style="text-align: center;">
+                  </label></h5>
+                <h5 class="card-title"><label>
+                    Ukuran :
+                    <input type="text" name="ukuran" required value="<?= $jrs['ukuran']; ?>" style="text-align: center;">
+                  </label></h5>
+                <h5 class="card-title"><label>
+                    Asal Pengiriman :
+                    <input type="text" name="asal" required value="<?= $jrs['asal']; ?>" style="text-align: center;">
+                  </label></h5>
+                <h5 class="card-title"><label>
+                    Harga :
+                    <input type="text" name="harga" required value="<?= $jrs['harga']; ?>" style="text-align: center;">
+                  </label></h5>
+                <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                  <a href="index.php" class="btn btn-warning">Kembali</a>
+                  <button type="submit" name="ubah" class="btn btn-success">Ubah Data</button>
+                </div>
               </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <script src="../js/script.js"></script>
+    <script src="../js/script.js"></script>
 
 
 </body>

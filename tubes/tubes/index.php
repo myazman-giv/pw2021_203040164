@@ -1,15 +1,22 @@
 <?php
+/*
+Mochamad Yazman Yazid
+203040164
+https://github.com/myazman-giv/pw2021_203040164
+tugas Besar
+php
+*/
+?><?php
 
-require 'php/functions.php';
-$jersey = query("SELECT * FROM jersey");
+  require 'php/functions.php';
+  $jersey = query("SELECT * FROM jersey");
 
-// ketika cari di klik
-if (isset($_POST['cari'])) {
-  $jersey = cari($_POST['keyword']);
-}
+  // ketika cari di klik
+  if (isset($_POST['cari'])) {
+    $jersey = cari($_POST['keyword']);
+  }
 
-?>
-
+  ?>
 <!DOCTYPE html>
 <html>
 
@@ -134,7 +141,6 @@ if (isset($_POST['cari'])) {
   <!-- paralax -->
   <div id="partner" class="parallax-container">
     <div class="parallax"><img src="../img/prlx.jpg"></div>
-
     <div class="container partner scrollspy"><br>
       <h1 class="center light: light-blue-text text-darken-3">Our Partner</h1>
       <div class="row">
@@ -151,6 +157,7 @@ if (isset($_POST['cari'])) {
     </div>
   </div>
   <br><br><br>
+
 
   <div class="container">
     <div class="row">
@@ -179,8 +186,8 @@ if (isset($_POST['cari'])) {
           <div class="card " style="background-image:url(img/222.png);">
             <img src="img/<?= $jrs['gambar']; ?>">
             <div class="card-body">
-              <h5 class="card-title"><?= $jrs['harga']; ?></h5>
               <h5 class="card-text"><?= $jrs['jersey']; ?></h5>
+              <h5 class="card-title"><?= $jrs['harga']; ?></h5>
               <a href="php/detail1.php?id=<?= $jrs['id']; ?>" class="btn btn-outline-info">Lihat Detail</a>
             </div>
           </div>
