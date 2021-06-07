@@ -117,7 +117,7 @@ php
     <p>Copyright © 2021 Mochamad Yazman Yazid</p>
     <a href="https://web.facebook.com/hana.yazman/"><i class="bi bi-facebook" style="font-size: 2rem; color :yellow"></i></a>
     <a href="https://github.com/myazman-giv"><i class="bi bi-github" style="font-size: 2rem; color :yellow"></i></a>
-    <a href="https://www.instagram.com/yazmann_/"><i class="bi bi-instagram" style="font-size: 2rem; color :yellow"></i></a>
+    <a href="https://www.instagram.com/myazmany/"><i class="bi bi-instagram" style="font-size: 2rem; color :yellow"></i></a>
     <a href="https://twitter.com/myazman99?s=08"><i class="bi bi-twitter" style="font-size: 2rem; color :yellow"></i></a>
     <a href="https://youtube.com/channel/UCZhKBOMBPmZe8AQlwdk7C-g"><i class="bi bi-youtube" style="font-size: 2rem; color :yellow"></i></a>
   </footer>
